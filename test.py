@@ -59,7 +59,7 @@ def main():
             elif args.init_type == 'orth':
                 nn.init.orthogonal_(m.weight.data)
             elif args.init_type == 'xavier_uniform':
-                nn.init.xavier_uniform(m.weight.data, 1.)
+                nn.init.xavier_uniform_(m.weight.data, 1.)
             else:
                 raise NotImplementedError('{} unknown inital type'.format(args.init_type))
         elif classname.find('BatchNorm2d') != -1:
